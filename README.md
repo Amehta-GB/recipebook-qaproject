@@ -46,6 +46,8 @@ Requirements
 
 
 Planning
+      
+      ![image](https://user-images.githubusercontent.com/93129717/147138069-7b221eec-8c93-4490-bcfb-7371e1df8eca.png)
 
 
     Database Design
