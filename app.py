@@ -55,6 +55,19 @@ def newingrident():
 
 
 
+@app.route('/newcookingstep',methods = ['GET', 'POST'])
+def newcookingstep():
+    
+    if request.method == 'GET':
+        
+        return render_template('newcookingstep.html', rid2 = request.args.get('rid'))
+    
+    return redirect(url_for('show_all'))
+
+
+
+
+
 @app.route('/addnewrecipe', methods = ['GET', 'POST'])
 def addnewrecipe():
     if request.method == 'POST':
@@ -83,6 +96,19 @@ def addnewingrident():
 
 
 
+@app.route('/addnewcookingstep', methods = ['GET', 'POST'])
+def addnewcookingstep():
+    if request.method == 'POST':
+        
+        
+        receipe_step2 = Steps(step_data = request.form['name'],step_order = request.form['order'], recepie_id = request.form['rid'] )
+
+        db.session.add(receipe_step2)
+        db.session.commit()
+
+    return redirect(url_for('show_all'))
+    #return render_template('index.html',mytitle="Recipe Diary",recepies = Recepies.query.all(), ingridents = Ingridents.query.all(), steps = Steps.query.all() )
+    
 
 
 
@@ -105,6 +131,16 @@ def deleteingrident():
     return redirect(url_for('show_all')) 
 
 
+@app.route('/deletestep', methods = ['GET', 'POST'])
+def deletestep():
+    if request.method == 'POST':
+        
+        Steps.query.filter_by(id=request.form['iid']).delete()
+
+        db.session.commit()
+
+        
+    return redirect(url_for('show_all')) 
 
 
 @app.route('/deletreceipe', methods = ['GET', 'POST'])

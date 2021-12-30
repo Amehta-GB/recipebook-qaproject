@@ -1,0 +1,21 @@
+<html><head><title>{{ mytitle }}</title></head><body>
+
+    <p><h1>ADD NEW Cooking Step </h1></p><br><br>
+    
+    <form method="post" action="/addnewcookingstep">
+        <input type="hidden" id="rid" name="rid" value={{ rid2 }}>
+
+        <label >Step Details:</label>
+        <input type="text" name="name" id="name"><br><br><br>
+
+        <label >Cooking Order:</label>
+        <input type="text" name="order" id="order"><br><br><br>
+
+        <button type="submit">ADD NEW Cooking step</button>
+    </form>
+    
+    <br><br>
+
+
+</body>
+</html>

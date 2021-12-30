@@ -58,7 +58,8 @@
                             <tr>
                                 <td width="50%">Step : {{ step.step_order }} - {{ step.step_data }}</td>
                                 <td>
-                                    <form method="get" action="/page2">
+                                    <form method="post" action="/deletestep">
+                                    <input type="hidden" id="iid" name="iid" value={{ step.id }}>
                                     <button type="submit">Delete Step</button>
                                     </form>
                                 </td>
@@ -76,10 +77,11 @@
                         <input type="hidden" id="rid" name="rid" value={{ recepie.id }}>  
                     </form>
                     <form method="get" action="/newingrident">
-                        <input type="hidden" id="rid" name="rid" value= {{ recepie.id }}>
+                        <input type="hidden" id="rid" name="rid" value={{ recepie.id }}>
                         <button type="submit">ADD NEW Ingrident</button>
                     </form>
-                    <form method="get" action="/page2">
+                    <form method="get" action="/newcookingstep">
+                        <input type="hidden" id="rid" name="rid" value={{ recepie.id }}>
                         <button type="submit">ADD NEW Cooking Step</button>
                     </form>
 
