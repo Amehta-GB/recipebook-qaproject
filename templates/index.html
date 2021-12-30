@@ -1,0 +1,100 @@
+<html><head><title>{{ mytitle }}</title></head><body>
+
+<p><h1>Recipe Diary</h1></p>
+
+<form method="get" action="/newrecipe" method = "post">
+    <button type="submit">ADD NEW Recipe</button>
+</form>
+
+<br><br>
+
+
+
+
+{% for recepie in recepies %}
+
+            <Table width="90%" border="5">
+
+
+            <tr>
+                <td><b>Recipe Name</b></td>
+                <td><b>Ingridents</b></td>
+                <td><b>Cooking Steps</b></td>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td valign="top">
+                    
+                    {{ recepie.name }}
+
+                </td>
+
+                <td valign="top">
+
+                    {% for ingrident in ingridents %}
+                    {% if ingrident.recepie_id == recepie.id %}
+                        <table width="99%" border="1">
+                            <tr>
+                                <td width="50%"> {{ ingrident.ingrident_name }} - {{ ingrident.ingrident_qty }}</td>
+                                <td>
+                                    <form method="post" action="/deleteingrident">
+                                    <input type="hidden" id="iid" name="iid" value={{ ingrident.id }}>  
+                                    <button type="submit">Delete Ingrident</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    {% endif %}
+                    {% endfor %}
+
+
+                </td>
+                <td valign="top">
+                    
+                    {% for step in steps %}
+                    {% if step.recepie_id == recepie.id %}
+                        <table width="99%" border="1">
+                            <tr>
+                                <td width="50%">Step : {{ step.step_order }} - {{ step.step_data }}</td>
+                                <td>
+                                    <form method="get" action="/page2">
+                                    <button type="submit">Delete Step</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    {% endif %}
+                    {% endfor %}
+
+
+                </td>
+                <td valign="top">
+
+                    <form method="post" action="/deletreceipe">
+                        <button type="submit">Delete Recipe</button>
+                        <input type="hidden" id="rid" name="rid" value={{ recepie.id }}>  
+                    </form>
+                    <form method="get" action="/newingrident">
+                        <input type="hidden" id="rid" name="rid" value= {{ recepie.id }}>
+                        <button type="submit">ADD NEW Ingrident</button>
+                    </form>
+                    <form method="get" action="/page2">
+                        <button type="submit">ADD NEW Cooking Step</button>
+                    </form>
+
+                </td>
+            </tr>
+
+            </Table>
+            <br><br><br>
+
+{% endfor %}
+
+
+
+
+
+
+
+</body></html>

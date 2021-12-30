@@ -1,0 +1,21 @@
+<html><head><title>{{ mytitle }}</title></head><body>
+
+    <p><h1>ADD NEW Ingrident </h1></p><br><br>
+    
+    <form method="post" action="/addnewingrident">
+        <input type="hidden" id="rid" name="rid" value= {{ rid2 }}>
+
+        <label >Ingrident Details:</label>
+        <input type="text" name="name" id="name"><br><br><br>
+
+        <label >Ingrident Quantity:</label>
+        <input type="text" name="qty" id="qty"><br><br><br>
+
+        <button type="submit">ADD NEW Ingrident</button>
+    </form>
+    
+    <br><br>
+
+
+</body>
+</html>
