@@ -1,12 +1,17 @@
 from flask import Flask , render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy 
 import os
+from flask_wtf import FlaskForm 
+from wtforms import StringField, SubmitField
+
+
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 db = SQLAlchemy(app) 
+
 
 class Recepies(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -26,6 +31,8 @@ class Steps(db.Model):
     step_data = db.Column(db.String(50), nullable=False)
     step_order = db.Column(db.Integer, nullable=False)
     recepie_id = db.Column(db.Integer, db.ForeignKey('recepies.id'), nullable=False)
+
+
 
 
 
