@@ -5,7 +5,7 @@ pipeline {
         stage('Preparation') {
             steps {
                 echo 'Hello World'
-                sh "mddir test_app_folder"
+                sh "mkdir test_app_folder"
                 sh "cd test_app_folder"
                 sh "git clone https://github.com/Amehta-GB/recipebook-qaproject.git"
             }
