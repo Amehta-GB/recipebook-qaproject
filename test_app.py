@@ -40,4 +40,4 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code, 200)
         #self.assertIn(b'MsWoman', response.data)
 
-
+#python3 -m pytest --cov=app
