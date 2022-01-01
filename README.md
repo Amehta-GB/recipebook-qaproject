@@ -1,25 +1,32 @@
 Table Of Contents
       
       Introduction
+      
       Requirements
+      
       Planning
         Database Design
         GUI Design
         Architecture Design
         CI/CD Process Design
+      
       Development
         Flask/Web App Development Using GITHUB
         Architecture Development
         CI/CD Development
+      
       Testing
         FrontEnd App Testing
-        BackEnd App Testing
+        Unit Testing
         Testing CI/CD Process
-       Deployment
+      
+      Deployment
         Docker Images / Containers on Production Server
-        Conclusion / Future Improvements
-       Risk Assesment
-       Acknowledgement
+      
+      Conclusion / Future Improvements
+      
+      Risk Assesment
+      
         
 
 
@@ -95,7 +102,7 @@ Planning
     
     
     
-    BackEnd App Testing
+    Unit Testing
     
     
     
