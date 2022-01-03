@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  recipe_app:
+    container_name: recipe_app
+    image: amehta1234/recipe_app:latest
+    build: .
+    ports:
+    - published: 80
+      target: 5000
+    enviroment:
+      DATABASE_URI: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD}@recipe_database:3306/recipedb
+      CREATE_SCHEMA:
+    depends_on:
+    - database
+  database:
+    container_name: recipe_database
+    image: mysql:5.7
+    enviroment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: recipedb
+    volumes:
+    - type: volume
+      source: recipe_database_volume
+      target: /var/lib/mysql
+volumes:
+  recipe_database_volume:

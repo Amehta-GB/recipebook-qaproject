@@ -1,0 +1,6 @@
+_pycache_
+.pytest_cache
+.coverage
+data.db
+README.md
+test_app.py
