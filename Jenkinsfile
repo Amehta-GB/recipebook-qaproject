@@ -32,6 +32,7 @@ pipeline {
                 sh "cd test_app_folder"
                 sh "git clone https://github.com/Amehta-GB/recipebook-qaproject.git"
                 sh "cd recipebook-qaproject"
+                sh "export DATABASE_URI=sqlite:/// CREATE_SCHEMA=true"
                 
                 
                 
