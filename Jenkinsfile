@@ -14,7 +14,7 @@ pipeline {
 
         
 
-        stage('cleanup') {
+        stage('cleanup2') {
             steps {
                 sh "cd ."
                 sh "rm -rf recipebook-qaproject"
