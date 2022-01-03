@@ -43,7 +43,7 @@ pipeline {
         stage('Test') {
             steps {
 
-                sh "python3 -m pytest --cov=app"
+                sh "python3 -m pytest"
 
 
             }
