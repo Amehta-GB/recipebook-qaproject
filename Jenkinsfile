@@ -1,7 +1,30 @@
 pipeline {
     agent any
 
+
+
+        
+
+
+
+
     stages {
+
+
+
+        
+
+        stage('cleanup') {
+            steps {
+                sh "cd ."
+                sh "rm -rf recipebook-qaproject"
+                sh "cd ."
+                sh "rm -rf test_app_folder"
+                 
+            }
+        }
+
+
         stage('Preparation') {
             steps {
                 echo 'Hello World'
